@@ -1,4 +1,4 @@
-package om.github.marschall.fizzbuzz;
+package com.github.marschall.fizzbuzz;
 
 import java.util.Spliterator;
 import java.util.function.Consumer;

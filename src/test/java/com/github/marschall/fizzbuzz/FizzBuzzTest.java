@@ -1,4 +1,4 @@
-package om.github.marschall.fizzbuzz;
+package com.github.marschall.fizzbuzz;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,9 +8,10 @@ import java.util.Spliterator;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import om.github.marschall.fizzbuzz.FizzBuzz.FizzBuzzSpliterator;
-
 import org.junit.Test;
+
+import com.github.marschall.fizzbuzz.FizzBuzz;
+import com.github.marschall.fizzbuzz.FizzBuzz.FizzBuzzSpliterator;
 
 public class FizzBuzzTest {
 
