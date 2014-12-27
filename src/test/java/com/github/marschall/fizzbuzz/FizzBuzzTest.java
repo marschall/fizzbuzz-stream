@@ -10,7 +10,6 @@ import java.util.stream.StreamSupport;
 
 import org.junit.Test;
 
-import com.github.marschall.fizzbuzz.FizzBuzz;
 import com.github.marschall.fizzbuzz.FizzBuzz.FizzBuzzSpliterator;
 
 public class FizzBuzzTest {
