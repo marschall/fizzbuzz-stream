@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 public final class FizzBuzz {
-  
+
   public static void main(String[] args) {
     stream().limit(100L).forEach(System.out::println);
   }
@@ -14,16 +14,18 @@ public final class FizzBuzz {
   public static Stream<String> stream() {
     return StreamSupport.stream(new FizzBuzzSpliterator(), false);
   }
-  
+
   static final class FizzBuzzSpliterator implements Spliterator<String> {
-    
+
+      private static final int CHARACTERISTIS = SIZED | SUBSIZED | IMMUTABLE | NONNULL | DISTINCT;
+
     /**
      * Position of the next read.
      */
     private long index;
     private long end;
-    
-    
+
+
     FizzBuzzSpliterator(long index, long end) {
       this.index = index;
       this.end = end;
@@ -40,7 +42,7 @@ public final class FizzBuzz {
         index += 1;
       }
     }
-    
+
     private String generateValue() {
       boolean divisibleByThree = index % 3L == 0L;
       boolean divisibleByFive = index % 5L == 0L;
@@ -54,7 +56,7 @@ public final class FizzBuzz {
         return Long.toString(index);
       }
     }
-    
+
     @Override
     public boolean tryAdvance(Consumer<? super String> action) {
       if (this.index > this.end) {
@@ -79,16 +81,16 @@ public final class FizzBuzz {
     public long estimateSize() {
       return this.end - this.index + 1;
     }
-    
+
     public long getExactSizeIfKnown() {
       return estimateSize();
     }
-    
+
     @Override
     public int characteristics() {
-      return Spliterator.SUBSIZED;
+      return CHARACTERISTIS;
     }
-    
+
   }
 
 }
