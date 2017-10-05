@@ -66,6 +66,7 @@ public final class FizzBuzz {
       index += 1;
       return true;
     }
+
     @Override
     public Spliterator<String> trySplit() {
       if (this.index >= this.end) {
@@ -77,6 +78,7 @@ public final class FizzBuzz {
       this.index += half;
       return result;
     }
+
     @Override
     public long estimateSize() {
       return this.end - this.index + 1;

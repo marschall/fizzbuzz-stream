@@ -1,6 +1,6 @@
 package com.github.marschall.fizzbuzz;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.Spliterator;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.github.marschall.fizzbuzz.FizzBuzz.FizzBuzzSpliterator;
 
@@ -32,5 +32,5 @@ public class FizzBuzzTest {
     assertEquals(Arrays.asList("FizzBuzz", "16", "17", "Fizz", "19"),
         StreamSupport.stream(spliterator, false).collect(Collectors.toList()));
   }
-  
+
 }
